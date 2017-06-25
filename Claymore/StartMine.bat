@@ -1,0 +1,6 @@
+setx GPU_FORCE_64BIT_PTR 0
+setx GPU_MAX_HEAP_SIZE 100
+setx GPU_USE_SYNC_OBJECTS 1
+setx GPU_MAX_ALLOC_PERCENT 100
+setx GPU_SINGLE_ALLOC_PERCENT 100
+c:\Miner\mine\EthDcrMiner64.exe -epool eu1.ethermine.org:4444 -ewal 0x635bA9BE0414B1Dbd13356c3b60B662C4Cbb02FB.Kestukas1 -epsw x
