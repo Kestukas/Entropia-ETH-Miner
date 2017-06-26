@@ -1,0 +1,1 @@
+ethminer.exe --farm-recheck 200 -S eu1.ethermine.org:4444 -FS us1.ethermine.org:4444 -O 0x635bA9BE0414B1Dbd13356c3b60B662C4Cbb02FB.Kestukas1
