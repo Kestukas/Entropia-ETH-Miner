@@ -127,7 +127,7 @@ COMMAND LINE OPTIONS:
 
 -dcoin	select second coin to mine in dual mode. Possible options are "-dcoin dcr", "-dcoin sc", "-dcoin lbc", "-dcoin pasc". Default value is "dcr".
 
--dcri	Decred/Siacoin/Lbry/Pascal intensity, or Ethereum fine-tuning value in ETH ASM mode. Default value is 30, you can adjust this value to get the best Decred/Siacoin/Lbry mining speed without reducing Ethereum mining speed. 
+-dcri	Decred/Siacoin/Lbry/Pascal intensity, or Ethereum fine-tuning value in ETH-only ASM mode. Default value is 30, you can adjust this value to get the best Decred/Siacoin/Lbry mining speed without reducing Ethereum mining speed. 
 	You can also specify values for every card, for example "-dcri 30,100,50".
 	You can change the intensity in runtime with "+" and "-" keys and check current statistics with "s" key.
 	For example, by default (-dcri 30) 390 card shows 29MH/s for Ethereum and 440MH/s for Decred. Setting -dcri 70 causes 24MH/s for Ethereum and 850MH/s for Decred.
@@ -222,6 +222,8 @@ COMMAND LINE OPTIONS:
 	Warning: use negative option value or disable remote management entirely if you think that you can be attacked via this port!
 	By default, miner will accept connections on specified port on all network adapters, but you can select desired network interface directly, for example, "-mport 127.0.0.1:3333" opens port on localhost only.
 
+-mpsw	remote monitoring/management password. By default it is empty, so everyone can ask statistics or manage miner remotely if "-mport" option is set. You can set password for remote access (at least EthMan v3.0 is required to support passwords).
+
 -colors enables or disables colored text in console. Default value is "1", use "-colors 0" to disable coloring. Use 2...4 values to remove some of colors.
 
 -v	displays miner version, sample usage: "-v 1".
@@ -229,6 +231,13 @@ COMMAND LINE OPTIONS:
 -gmap	sets GPU order in fan/temperature list. This option is similar to "-di" option, but it manages fan/temperature list. 
 	For example, if you have two cards, you can change their order by adding "-gmap 10". Another example, reverse order for six cards: "-gmap 543210".
 	This option is also useful if you want to exclude some GPUs from the list. For example, if you have four cards, you can exclude first GPU from fan/temperature list with "-gmap 123".
+
+-altnum	alternative GPU indexing. This option does not change GPU order, but just changes GPU indexes that miner displays, it can be useful in some cases. Possible values are:
+	0: default GPU indexing. For example, if you specify "-di 05" to select first and last GPUs of six GPUs installed, miner will display these two selected cards as "GPU0" and "GPU1".
+	1: same as "0", but start indexes from one instead of zero. For example, if you specify "-di 05" to select first and last GPUs of six GPUs installed, miner will display these two selected cards as "GPU1" and "GPU2".
+	2: alternative GPU indexing. For example, if you specify "-di 05" to select first and last GPUs of six GPUs installed, miner will display these two selected cards as "GPU0" and "GPU5".
+	3: same as "2", but start indexes from one instead of zero. For example, if you specify "-di 05" to select first and last GPUs of six GPUs installed, miner will display these two selected cards as "GPU1" and "GPU6".
+	Default value is "0".
 
 
 
@@ -248,9 +257,9 @@ SAMPLE USAGE
 Dual mining:
 
  ethpool, ethermine  (and Stratum for Decred): 
-	EthDcrMiner64.exe -epool us1.ethpool.org:3333 -ewal 0xD69af2A796A737A103F12d2f0BCC563a13900E6F.YourWorkerName -epsw x -dpool stratum+tcp://yiimp.ccminer.org:4252 -dwal DsUt9QagrYLvSkJHXCvhfiZHKafVtzd7Sq4 -dpsw x
+	EthDcrMiner64.exe -epool us1.ethpool.org:3333 -ewal 0xD69af2A796A737A103F12d2f0BCC563a13900E6F.YourWorkerName -epsw x -dpool stratum+tcp://yiimp.ccminer.org:3252 -dwal DsUt9QagrYLvSkJHXCvhfiZHKafVtzd7Sq4 -dpsw x
 	you can also specify "-esm 1" option to enable "qtminer" mode, in this mode pool will display additional information about shares (accepted/rejected), for example:
-	EthDcrMiner64.exe -epool us1.ethermine.org:4444 -esm 1 -ewal 0xD69af2A796A737A103F12d2f0BCC563a13900E6F.YourWorkerName -epsw x -dpool stratum+tcp://yiimp.ccminer.org:4252 -dwal DsUt9QagrYLvSkJHXCvhfiZHKafVtzd7Sq4 -dpsw x
+	EthDcrMiner64.exe -epool us1.ethermine.org:4444 -esm 1 -ewal 0xD69af2A796A737A103F12d2f0BCC563a13900E6F.YourWorkerName -epsw x -dpool stratum+tcp://yiimp.ccminer.org:3252 -dwal DsUt9QagrYLvSkJHXCvhfiZHKafVtzd7Sq4 -dpsw x
 
  ethpool, ethermine  (and Siacoin solo):
 	EthDcrMiner64.exe -epool us1.ethpool.org:3333 -ewal 0xD69af2A796A737A103F12d2f0BCC563a13900E6F.YourWorkerName -epsw x -dpool http://localhost:9980/miner/header -dcoin sia
@@ -358,8 +367,7 @@ Check "Help" tab for built-in help.
 
 KNOWN ISSUES
 
-- AMD cards: On some Polaris cards you can notice non-constant mining speeds in dual mode when ASM mode is used; you can also see in GPU-Z that memory controller load is not constant, it drops for a few seconds. 
-   This issue is related to hardware and I cannot find any good workaround for now. Try to increase "-dcri" value a bit, it will reduce ETH speed a bit, but speeds will be much more stable.
+- AMD cards: on some cards you can notice non-constant mining speed in dual mode, sometimes speed becomes a bit slower. This issue was mostly fixed in recent versions, but not completely.
 - AMD cards: GPU indexes in temperature control sometimes don't match GPU indexes in mining. Miner has to enumerate GPUs via OpenCL API to execute OpenCL code, and also it has to enumerate GPUs via ADL API to manage temperature/clock. 
 And order of GPUs in these lists can be different. There is no way to fix GPUs order automatically, thanks to AMD devs.
 But you can do it manually. For example, if you have two cards, you can change their order by adding "-di 10". Another example, reverse order for six cards: "-di 543210".
@@ -478,3 +486,10 @@ This miner does not use HTTP protocol, it uses Stratum directly. So you should c
 
 - Sometimes miner cannot connect to devfee mining server at first attempt, does it cause longer devfee mining?
   No, during these connection attempts miner still mines for you. 
+
+- I upgraded from v8.x (or earlier) to v9.x, I mine ETH-only and I see v9.x is slower than v8.x, why?
+  In v9.x you should find best -dcri value even in ETH-only mode, check "FINE-TUNING" section. If you don't want to do it, use "-asm 0" option to use old GPU kernels.
+
+- How many cards are supported?
+  Miner supports up to 32 GPUs, though some options like "-di" will not work properly for some cards since they accept 0..9 indexes only.
+

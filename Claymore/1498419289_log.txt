@@ -1,0 +1,132 @@
+22:34:49:726	ce4	args: -epool eu1.ethermine.org:4444 -ewal 0x635bA9BE0414B1Dbd13356c3b60B662C4Cbb02FB.Kestukas1 -epsw x 
+22:34:49:727	ce4	
+22:34:49:727	ce4	ษออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+22:34:49:727	ce4	บ      Claymore's Dual ETH + DCR/SC/LBC/PASC GPU Miner v9.2      บ
+22:34:49:728	ce4	ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+22:34:49:728	ce4	
+22:34:49:947	ce4	ETH: 1 pool is specified
+22:34:49:947	ce4	Main Ethereum pool is eu1.ethermine.org:4444
+22:34:49:947	ce4	DCR: 0 pool is specified
+22:34:50:032	ce4	OpenCL platform: AMD Accelerated Parallel Processing
+22:34:50:032	ce4	OpenCL initializing...
+
+22:34:50:032	ce4	AMD Cards available: 1 
+22:34:50:032	ce4	GPU #0: Ellesmere, 8192 MB available, 36 compute units
+22:34:50:032	ce4	GPU #0 recognized as Radeon RX 480/580
+22:34:50:032	ce4	POOL/SOLO version
+22:34:50:032	ce4	b335 
+22:34:50:032	ce4	Platform: Windows
+22:34:50:048	ce4	start building OpenCL program for GPU 0...
+22:34:50:331	ce4	done
+22:34:50:563	ce4	GPU #0: algorithm ASM
+22:34:50:563	ce4	cudaGetDeviceCount failed (35, CUDA driver version is insufficient for CUDA runtime version), probably no CUDA devices
+22:34:50:563	ce4	No NVIDIA CUDA GPUs detected.
+22:34:50:563	ce4	Total cards: 1 
+22:35:00:168	ce4	No NVIDIA cards in the list, NVML library will not be used.
+22:35:00:199	296c	ETH: Stratum - connecting to 'eu1.ethermine.org' <188.165.209.115> port 4444
+22:35:00:246	296c	send: {"worker": "eth1.0", "jsonrpc": "2.0", "params": ["0x635bA9BE0414B1Dbd13356c3b60B662C4Cbb02FB.Kestukas1", "x"], "id": 2, "method": "eth_submitLogin"}
+
+22:35:00:246	296c	ETH: Stratum - Connected (eu1.ethermine.org:4444)
+22:35:00:299	296c	got 39 bytes
+22:35:00:299	ce4	No pool specified for Decred! Ethereum-only mining mode is enabled
+22:35:00:299	ce4	ETHEREUM-ONLY MINING MODE ENABLED (-mode 1)
+22:35:00:299	ce4	ETH: eth-proxy stratum mode
+22:35:00:299	296c	buf: {"id":2,"jsonrpc":"2.0","result":true}
+
+22:35:00:299	ce4	Watchdog enabled
+22:35:00:299	296c	parse packet: 38
+22:35:00:299	296c	ETH: Authorized
+22:35:00:299	296c	send: {"worker": "", "jsonrpc": "2.0", "params": [], "id": 3, "method": "eth_getWork"}
+
+22:35:00:299	ce4	Remote management (READ-ONLY MODE) is enabled on port 3333
+22:35:00:299	296c	new buf size: 0
+22:35:00:299	ce4	
+22:35:00:346	296c	got 248 bytes
+22:35:00:346	296c	buf: {"id":3,"jsonrpc":"2.0","result":["0x9030d19b3b2b30ed09bc9722b8a94d97e1e68d9f73c28f6b5d5a3261e760636a","0x129656acf5804305816f3dc0b32b47077c8cf4b8724f181efc529a93e4c1385b","0x0112e0be826d694b2e62d01511f12a6061fbaec8bc02357593e70e52ba","0x3bf4ab"]}
+
+22:35:00:346	296c	parse packet: 247
+22:35:00:346	296c	ETH: job changed
+22:35:00:346	296c	new buf size: 0
+22:35:00:446	2638	Setting DAG epoch #130...
+22:35:02:055	2638	Setting DAG epoch #130 for GPU #0
+22:35:02:056	2638	Create GPU buffer for GPU #0
+22:35:07:304	2638	GPU 0 DAG creation time - 5234 ms
+22:35:07:305	2638	Setting DAG epoch #130 for GPU #0 done
+22:35:07:889	296c	got 248 bytes
+22:35:07:889	296c	buf: {"id":0,"jsonrpc":"2.0","result":["0x1eaafc00d860ccb8396277fe4825f493358b4e0936ecf8bc46f8bd47077a5395","0x129656acf5804305816f3dc0b32b47077c8cf4b8724f181efc529a93e4c1385b","0x0112e0be826d694b2e62d01511f12a6061fbaec8bc02357593e70e52ba","0x3bf4ac"]}
+
+22:35:07:890	296c	parse packet: 247
+22:35:07:890	296c	ETH: job changed
+22:35:07:890	296c	new buf size: 0
+22:35:07:890	296c	ETH: 06/25/17-22:35:07 - New job from eu1.ethermine.org:4444
+22:35:07:890	296c	target: 0x0000000112e0be82 (diff: 4000MH), epoch #130
+22:35:07:892	296c	ETH - Total Speed: 23.823 Mh/s, Total Shares: 0, Rejected: 0, Time: 00:00
+22:35:07:893	296c	ETH: GPU0 23.823 Mh/s
+22:35:10:362	296c	ETH: checking pool connection...
+22:35:10:362	296c	send: {"worker": "", "jsonrpc": "2.0", "params": [], "id": 3, "method": "eth_getWork"}
+
+22:35:10:398	296c	got 248 bytes
+22:35:10:398	296c	buf: {"id":3,"jsonrpc":"2.0","result":["0x1eaafc00d860ccb8396277fe4825f493358b4e0936ecf8bc46f8bd47077a5395","0x129656acf5804305816f3dc0b32b47077c8cf4b8724f181efc529a93e4c1385b","0x0112e0be826d694b2e62d01511f12a6061fbaec8bc02357593e70e52ba","0x3bf4ac"]}
+
+22:35:10:398	296c	parse packet: 247
+22:35:10:398	296c	ETH: job is the same
+22:35:10:399	296c	new buf size: 0
+22:35:15:003	296c	got 248 bytes
+22:35:15:003	296c	buf: {"id":0,"jsonrpc":"2.0","result":["0x76c5431025b2a5f7695cd02287f9c350c42bf9ac15e3ced70204613cc6cb8856","0x129656acf5804305816f3dc0b32b47077c8cf4b8724f181efc529a93e4c1385b","0x0112e0be826d694b2e62d01511f12a6061fbaec8bc02357593e70e52ba","0x3bf4ad"]}
+
+22:35:15:003	296c	parse packet: 247
+22:35:15:004	296c	ETH: job changed
+22:35:15:004	296c	new buf size: 0
+22:35:15:004	296c	ETH: 06/25/17-22:35:15 - New job from eu1.ethermine.org:4444
+22:35:15:004	296c	target: 0x0000000112e0be82 (diff: 4000MH), epoch #130
+22:35:15:005	296c	ETH - Total Speed: 24.235 Mh/s, Total Shares: 0, Rejected: 0, Time: 00:00
+22:35:15:006	296c	ETH: GPU0 24.235 Mh/s
+22:35:20:374	296c	send: {"id":6,"jsonrpc":"2.0","method":"eth_submitHashrate","params":["0x171be16", "0x00000000000000000000000000000000000000000000000000000000d1447913"]}
+
+22:35:20:376	296c	ETH: checking pool connection...
+22:35:20:376	296c	send: {"worker": "", "jsonrpc": "2.0", "params": [], "id": 3, "method": "eth_getWork"}
+
+22:35:20:427	296c	got 39 bytes
+22:35:20:427	296c	buf: {"id":6,"jsonrpc":"2.0","result":true}
+
+22:35:20:427	296c	parse packet: 38
+22:35:20:427	296c	new buf size: 0
+22:35:20:459	296c	got 248 bytes
+22:35:20:459	296c	buf: {"id":3,"jsonrpc":"2.0","result":["0x76c5431025b2a5f7695cd02287f9c350c42bf9ac15e3ced70204613cc6cb8856","0x129656acf5804305816f3dc0b32b47077c8cf4b8724f181efc529a93e4c1385b","0x0112e0be826d694b2e62d01511f12a6061fbaec8bc02357593e70e52ba","0x3bf4ad"]}
+
+22:35:20:459	296c	parse packet: 247
+22:35:20:459	296c	ETH: job is the same
+22:35:20:459	296c	new buf size: 0
+22:35:29:973	296c	got 248 bytes
+22:35:29:973	296c	buf: {"id":0,"jsonrpc":"2.0","result":["0xcfe51b46e86c2a2246a2085bf397b87782743b1a32d525c62b78867abf201936","0x129656acf5804305816f3dc0b32b47077c8cf4b8724f181efc529a93e4c1385b","0x0112e0be826d694b2e62d01511f12a6061fbaec8bc02357593e70e52ba","0x3bf4ae"]}
+
+22:35:29:973	296c	parse packet: 247
+22:35:29:973	296c	ETH: job changed
+22:35:29:973	296c	new buf size: 0
+22:35:29:974	296c	ETH: 06/25/17-22:35:29 - New job from eu1.ethermine.org:4444
+22:35:29:974	296c	target: 0x0000000112e0be82 (diff: 4000MH), epoch #130
+22:35:29:975	296c	ETH - Total Speed: 24.056 Mh/s, Total Shares: 0, Rejected: 0, Time: 00:00
+22:35:29:976	296c	ETH: GPU0 24.056 Mh/s
+22:35:30:394	296c	ETH: checking pool connection...
+22:35:30:394	296c	send: {"worker": "", "jsonrpc": "2.0", "params": [], "id": 3, "method": "eth_getWork"}
+
+22:35:30:430	296c	got 248 bytes
+22:35:30:430	296c	buf: {"id":3,"jsonrpc":"2.0","result":["0xcfe51b46e86c2a2246a2085bf397b87782743b1a32d525c62b78867abf201936","0x129656acf5804305816f3dc0b32b47077c8cf4b8724f181efc529a93e4c1385b","0x0112e0be826d694b2e62d01511f12a6061fbaec8bc02357593e70e52ba","0x3bf4ae"]}
+
+22:35:30:430	296c	parse packet: 247
+22:35:30:430	296c	ETH: job is the same
+22:35:30:430	296c	new buf size: 0
+22:35:32:109	ce4	GPU0 t=71C fan=51%
+22:35:32:110	ce4	em hbt: 0, fm hbt: 0, 
+22:35:32:110	ce4	watchdog - thread 0, hb time 63
+22:35:32:110	ce4	watchdog - thread 1, hb time 266
+22:35:37:039	296c	got 248 bytes
+22:35:37:039	296c	buf: {"id":0,"jsonrpc":"2.0","result":["0x5eb726c8d700c5bac31e8cfeca35cc64d1f02c718429b2254008a007fb73f1df","0x129656acf5804305816f3dc0b32b47077c8cf4b8724f181efc529a93e4c1385b","0x0112e0be826d694b2e62d01511f12a6061fbaec8bc02357593e70e52ba","0x3bf4af"]}
+
+22:35:37:039	296c	parse packet: 247
+22:35:37:039	296c	ETH: job changed
+22:35:37:039	296c	new buf size: 0
+22:35:37:039	296c	ETH: 06/25/17-22:35:37 - New job from eu1.ethermine.org:4444
+22:35:37:039	296c	target: 0x0000000112e0be82 (diff: 4000MH), epoch #130
+22:35:37:039	296c	ETH - Total Speed: 24.154 Mh/s, Total Shares: 0, Rejected: 0, Time: 00:00
+22:35:37:039	296c	ETH: GPU0 24.154 Mh/s

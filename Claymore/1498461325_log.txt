@@ -1,0 +1,18 @@
+10:15:25:484	547c	args: -epool eu1.ethermine.org:4444 -ewal 0x635bA9BE0414B1Dbd13356c3b60B662C4Cbb02FB.Kestukas1 -epsw x 
+10:15:25:485	547c	
+10:15:25:485	547c	ษออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+10:15:25:487	547c	บ      Claymore's Dual ETH + DCR/SC/LBC/PASC GPU Miner v9.2      บ
+10:15:25:488	547c	ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+10:15:25:488	547c	
+10:15:25:706	547c	ETH: 1 pool is specified
+10:15:25:706	547c	Main Ethereum pool is eu1.ethermine.org:4444
+10:15:25:706	547c	DCR: 0 pool is specified
+10:15:26:313	547c	OpenCL platform: AMD Accelerated Parallel Processing
+10:15:26:313	547c	OpenCL initializing...
+
+10:15:26:313	547c	AMD Cards available: 1 
+10:15:26:313	547c	GPU #0: Bonaire, 2048 MB available, 14 compute units
+10:15:26:313	547c	POOL/SOLO version
+10:15:26:313	547c	b335 
+10:15:26:313	547c	Platform: Windows
+10:15:26:359	547c	start building OpenCL program for GPU 0...
